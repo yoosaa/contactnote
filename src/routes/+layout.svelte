@@ -1,9 +1,10 @@
 <script lang="ts">
+	import ClarityScript from '$lib/presentation/shared/analytics/ClarityScript.svelte';
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<ClarityScript />
+
 {@render children()}
