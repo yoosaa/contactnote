@@ -1,42 +1,21 @@
-# sv
+# Contactnote
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Contactnote は、小規模事業者向けの問い合わせ・対応管理メモツールです。
 
-## Creating a project
+受けた連絡や問い合わせを、未着手から対応完了まで抜け漏れなく管理できるようにすることを目的としています。
 
-If you're seeing this, you've probably already done this step. Congrats!
+本格的な CRM ではなく、小規模店舗・個人運営・フリーランス・小規模チームでも扱いやすい軽量な問い合わせ管理ツールとして設計しています。
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Demo Scope
 
-To recreate this project with the same configuration:
+初期 MVP では、以下の操作に対応しています。
 
-```sh
-# recreate this project
-pnpm dlx sv@0.15.2 create --template minimal --types ts --add eslint prettier playwright tailwindcss="plugins:none" --install pnpm contactnote
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- 問い合わせの新規作成
+- 問い合わせ一覧
+- 問い合わせ詳細
+- 問い合わせ編集
+- 問い合わせ削除
+- ステータス変更
+- ステータスフィルタ
+- 連絡チャネルフィルタ
+- localStorage への保存
