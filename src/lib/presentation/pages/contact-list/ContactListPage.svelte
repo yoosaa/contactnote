@@ -12,9 +12,9 @@
 		type ContactRecordStatus
 	} from '$lib/domain/contact-record';
 	import AppShell from '$lib/presentation/widgets/app-shell/AppShell.svelte';
-	import { getContactStatusBadgeClass } from '$lib/presentation/entities/contact-record/contactRecordView';
 	import Button from '$lib/presentation/shared/ui/Button.svelte';
 	import { selectClass } from '$lib/presentation/shared/ui/fieldClasses';
+	import ContactStatusBadge from '$lib/presentation/entities/contact-record/ContactStatusBadge.svelte';
 
 	type StatusFilter = ContactRecordStatus | 'all';
 	type ChannelFilter = ContactChannel | 'all';
@@ -158,9 +158,7 @@
 					]}
 				>
 					<div class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
-						<span class={getContactStatusBadgeClass(record.status)}>
-							{contactRecordStatusLabels[record.status]}
-						</span>
+						<ContactStatusBadge status={record.status} />
 						<span>{contactChannelLabels[record.contactChannel]}</span>
 						<span>最終更新: {formatDate(record.lastActionAt)}</span>
 					</div>

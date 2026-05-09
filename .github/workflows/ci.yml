@@ -34,5 +34,8 @@ jobs:
       - name: Run Svelte check
         run: pnpm check
 
+      - name: Build Storybook
+        run: pnpm build-storybook
+
       - name: Run Playwright tests
         run: pnpm exec playwright test

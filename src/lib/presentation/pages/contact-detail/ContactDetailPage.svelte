@@ -12,9 +12,9 @@
 		type ContactRecord,
 		type ContactRecordStatus
 	} from '$lib/domain/contact-record';
-	import { getContactStatusBadgeClass } from '$lib/presentation/entities/contact-record/contactRecordView';
 	import AppShell from '$lib/presentation/widgets/app-shell/AppShell.svelte';
 	import Button from '$lib/presentation/shared/ui/Button.svelte';
+	import ContactStatusBadge from '$lib/presentation/entities/contact-record/ContactStatusBadge.svelte';
 
 	type Props = {
 		id: string;
@@ -103,9 +103,7 @@
 		<div class="mb-6 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
 			<div>
 				<div class="mb-3 flex flex-wrap items-center gap-2 text-sm text-slate-500">
-					<span class={getContactStatusBadgeClass(record.status)}>
-						{contactRecordStatusLabels[record.status]}
-					</span>
+					<ContactStatusBadge status={record.status} />
 					<span>最終更新: {formatDate(record.lastActionAt)}</span>
 				</div>
 
